@@ -1,8 +1,15 @@
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from "vue";
+import SearchBox from "../components/SearchBox.vue";
+
+export default defineComponent({
+  name: "HomeView",
+  components: { SearchBox }
+})
 </script>
 
 <template>
   <main>
-    Hello this is from the home view component
+    <SearchBox />
   </main>
 </template>

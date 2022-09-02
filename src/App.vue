@@ -1,11 +1,25 @@
-<script setup lang="ts">
+<script lang="ts">
+import SetupNavigation from "./components/SetupNavigation.vue";
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "App",
+  components: {
+    SetupNavigation,
+  },
+});
 </script>
 
 <template>
-  <h2>Hello world</h2>
-  <RouterView />
+    <div class="body">
+      <SetupNavigation />
+      <RouterView />
+    </div>
 </template>
 
 <style scoped>
-
+    .body {
+      margin: 0;
+      padding: 0;
+    }
 </style>
