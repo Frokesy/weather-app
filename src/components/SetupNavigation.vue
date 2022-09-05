@@ -12,7 +12,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import SearchBox from "./SearchBox.vue";
 
 export default defineComponent({
     name: "SetupNavigation",
@@ -26,25 +25,49 @@ export default defineComponent({
 </script>
 
 <style>
-.nav-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  align-items: center;
-  margin: 30px auto;
-}
-.nav-group h2 {
-  font-size: 1.5rem;
-}
-.logo {
-  display: flex;
-  gap: 10px;
-}
-img {
-  width: 3rem;
-}
-.city {
-  font-size: 1.2rem;
+  .nav-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+    margin: 30px auto;
+  }
+  .nav-group h2 {
+    font-size: 1.5rem;
+  }
+  .logo {
+    display: flex;
+    gap: 10px;
+  }
+  img {
+    width: 3rem;
+  }
+  .city {
+    font-size: 1.2rem;
+  }
+
+@media screen and (max-width: 768px) {
+  .nav-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    align-items: center;
+    margin: 30px auto;
+  }
+  .nav-group h2 {
+    font-size: 1.5rem;
+  }
+  .logo {
+    display: flex;
+    gap: 10px;
+  }
+  img {
+    width: 3rem;
+  }
+  .city {
+    font-size: 1.2rem;
+  }
 }
 </style>
