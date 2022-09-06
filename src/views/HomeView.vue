@@ -7,16 +7,21 @@ export default defineComponent({
   data() {
     return {
       searchInput: '' as String | Number,
-      searchResults: [] as Array<any>, 
+      searchResults: [] as Array<any>,
+      error: false as Boolean, 
     }
   },
   updated() {
-    const Token = 'pk.eyJ1IjoiZnJva2VzIiwiYSI6ImNsN2tnODRoMTA2Z28zb25sbTA3aWk1Z2EifQ.g_6YVlr32dq2k9DB1fFLcA'
-    const getSearchResults = async () => {
+    const Token:String = 'pk.eyJ1IjoiZnJva2VzIiwiYSI6ImNsN2tnODRoMTA2Z28zb25sbTA3aWk1Z2EifQ.g_6YVlr32dq2k9DB1fFLcA'
+    try {
+      const getSearchResults = async () => {
       const result = await axios.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${this.searchInput}.json?access_token=${Token}&types=place&autocomplete=true&limit=5`)
       this.searchResults = result.data.features
     }
     getSearchResults()
+    } catch (err) {
+      this.error = true
+    }
   }
 })
 </script>
@@ -25,7 +30,8 @@ export default defineComponent({
   <main>
     <div class="search">
       <input type="text" v-model="searchInput" placeholder="Search for any city here...">
-      <ul>
+      <ul v-if="searchInput">
+        <p v-if="error">Something went wrong, please try again</p>
         <li v-for="searchResult in searchResults" :key="searchResult.id">{{ searchResult.place_name }}</li>
       </ul>
     </div>
@@ -111,6 +117,7 @@ export default defineComponent({
       padding: 10px;
       border-bottom: 1px solid #ccc;
       list-style-type: none;
+      cursor: pointer;
     }
   }
 </style>
