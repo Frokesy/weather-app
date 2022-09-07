@@ -27,7 +27,7 @@ export default defineComponent({
         query: {
           lat: searchResult.geometry.coordinates[1],
           lng: searchResult.geometry.coordinates[0],
-          preview: true as any
+          preview: 'true'
         }
        })
     }
