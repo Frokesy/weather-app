@@ -63,6 +63,8 @@ export default defineComponent({
   .search {
     width: 100%;
     margin: 0 auto;
+    font-family: monospace
+
   }
   .search input {
     padding: 10px 0px;
@@ -70,11 +72,12 @@ export default defineComponent({
     width: 100%;
     background: transparent;
     border-bottom: 1px solid #ccc;
-    color: #d9c2a5;
+    color: #ccc;
     font-size: 1rem;
+
   }
   ::placeholder {
-    color: #d9c2a5;
+    color: #ccc;
   }
   .search input:hover {
     border: none;
@@ -92,14 +95,15 @@ export default defineComponent({
     padding: 2px;
     display: flex;
     flex-direction: column;
-    color: #d9c2a5;
+    color: #ccc;
+    font-size: 0.9rem;
+
   }
   li {
     padding: 10px;
     border-bottom: 1px solid #ccc;
     list-style-type: none;
     cursor: pointer;
-
   }
   
   @media screen and (max-width: 768px) {
@@ -111,11 +115,11 @@ export default defineComponent({
       border: none;
       background: transparent;
       border-bottom: 1px solid #ccc;
-      color: #d9c2a5;
+      color: #ccc;
       font-size: 1rem;
     }
     ::placeholder {
-      color: #d9c2a5;
+      color: #ccc;
     }
     .search input:hover {
       border: none;
@@ -132,7 +136,7 @@ export default defineComponent({
       padding: 2px;
       display: flex;
       flex-direction: column;
-      color: #d9c2a5;
+      color: #ccc;
     }
     li {
       padding: 10px;

@@ -2,30 +2,25 @@
     <div class="nav-group">
         <div class="logo">
           <img src="../assets/images/cloudy.gif" alt="logo">
-          <h2>WEBBOT</h2>
+          <h2>webbot</h2>
         </div>
-        <div class="city">
-          Local Time: {{ time }}
+        <div class="time">
+          Local Time: {{ date }}
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useRoute, useRouter } from "vue-router";
-import { uid } from "uid";
 
 export default defineComponent({
     name: "SetupNavigation",
     data() {
         return {
-            time: new Date().toLocaleTimeString("en-US", {
+           date: new Date().toLocaleTimeString("en-US", {
                 hour: "2-digit",
                 minute: "2-digit",
             }),
-            route: useRoute(),
-            router: useRouter(),
-            savedCities: [] as any,
         };
     },
 });
@@ -40,8 +35,33 @@ export default defineComponent({
   .logo {
     display: flex;
     gap: 1rem;
+    font-family: 'Rampart One', cursive;
+    font-size: 1.5rem;
+    text-transform: capitalize;
   }
   img {
-    width: 5em;
+    width: 3.5em;
+  }
+  .time {
+    font-family: 'Rampart One', cursive;
+    font-size: 1.5rem;
+    color: #ccc;
+  }
+  @media screen and (max-width: 768px) {
+    .logo {
+      display: flex;
+      gap: 0.5rem;
+      font-family: 'Rampart One', cursive;
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+    img {
+      width: 3.5em;
+    }
+    .time {
+      font-family: 'Rampart One', cursive;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
   }
 </style>
