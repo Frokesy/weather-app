@@ -18,8 +18,14 @@ export default defineComponent({
 </template>
 
 <style scoped>
-    .body {
-      margin: 0;
-      padding: 0;
-    }
+.body {
+  font-family: Staatliches,Open Sauce,Albert Sans,Poppins,sans-serif;
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  }
 </style>

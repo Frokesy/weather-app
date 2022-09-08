@@ -2,72 +2,46 @@
     <div class="nav-group">
         <div class="logo">
           <img src="../assets/images/cloudy.gif" alt="logo">
-          <h2>Webbot</h2>
+          <h2>WEBBOT</h2>
         </div>
         <div class="city">
-          <span>Add City</span>
+          Local Time: {{ time }}
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { uid } from "uid";
 
 export default defineComponent({
     name: "SetupNavigation",
     data() {
         return {
-            Text: "Hello world from SetupNavigation",
+            time: new Date().toLocaleTimeString("en-US", {
+                hour: "2-digit",
+                minute: "2-digit",
+            }),
+            route: useRoute(),
+            router: useRouter(),
+            savedCities: [] as any,
         };
     },
-
 });
 </script>
 
 <style>
   .nav-group {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    width: 50%;
     align-items: center;
-    margin: 30px auto;
-  }
-  .nav-group h2 {
-    font-size: 1.5rem;
   }
   .logo {
     display: flex;
-    gap: 10px;
+    gap: 1rem;
   }
   img {
-    width: 3rem;
+    width: 5em;
   }
-  .city {
-    font-size: 1.2rem;
-  }
-
-@media screen and (max-width: 768px) {
-  .nav-group {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-    align-items: center;
-    margin: 30px auto;
-  }
-  .nav-group h2 {
-    font-size: 1.5rem;
-  }
-  .logo {
-    display: flex;
-    gap: 10px;
-  }
-  img {
-    width: 3rem;
-  }
-  .city {
-    font-size: 1.2rem;
-  }
-}
 </style>
