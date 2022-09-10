@@ -7,6 +7,12 @@
 <style>
     .animate {
         animation: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        background: linear-gradient(
+          to right,
+          #f3f4f6 4%,
+          #e5e7eb 25%,
+          #f3f4f6 36%
+        );
     }
     @keyframes pulse {
         0% {

@@ -16,12 +16,7 @@ import CityViewSkeleton from "../components/CityViewSkeleton.vue";
 
 <template>
   <div>
-    <Suspense>
-        <AsyncCityView />
-        <template #fallback>
-            <CityViewSkeleton />
-        </template>
-    </Suspense>
+        <AsyncCityView />    
   </div>
 </template>
 

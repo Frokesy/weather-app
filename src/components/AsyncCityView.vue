@@ -1,4 +1,5 @@
 <template>
+  <div v-if="weatherData">
     <div>
       <div class="preview" v-if="route.query.preview === 'true'">
          <span>You are currently viewing this in preview mode, an update on this will be provided later</span>
@@ -57,6 +58,10 @@
             </div>
         </div>   
     </div>
+  </div>
+  <div v-else>
+    <CityViewSkeleton />
+  </div>
  </template>
 
 
@@ -64,38 +69,39 @@
 import axios from "axios";
 import { defineComponent } from "vue";
 import { useRoute } from "vue-router";
+import CityViewSkeleton from "./CityViewSkeleton.vue";
 
 export default defineComponent({
     data() {
-        return{
+        return {
             route: useRoute(),
             weatherData: null as any,
-        }
+        };
     },
-    async mounted () {
+    async mounted() {
         const getWeatherData = async () => {
             try {
-                const weatherData = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${this.route.query.lat}&lon=${this.route.query.lng}&exclude={part}&appid=5fbdce717539e1f16120b7e52b90e251&units=metric`)
-
+                const weatherData = await axios.get(`https://api.openweathermap.org/data/3.0/onecall?lat=${this.route.query.lat}&lon=${this.route.query.lng}&exclude={part}&appid=5fbdce717539e1f16120b7e52b90e251&units=metric`);
                 //calculate current date and time
                 const currentDate = new Date().getTimezoneOffset() * 60 * 1000;
                 const utc = weatherData.data.current.dt * 1000 + currentDate;
                 weatherData.data.currentTime = utc + 1000 * weatherData.data.timezone_offset;
-
                 //calculate hourly weather offset
                 weatherData.data.hourly.forEach((hour: any) => {
                     const utc = hour.dt * 1000 + currentDate;
                     hour.currentTime = utc + 1000 * weatherData.data.timezone_offset;
                 });
-
-                return weatherData.data;       
-            } catch (error) {
-                
+                //flicker delay
+                await new Promise((resolve) => setTimeout(resolve, 1000));
+                return weatherData.data;
             }
-        }
-        this.weatherData = await getWeatherData()
-        console.log(this.weatherData)
-    }
+            catch (error) {
+            }
+        };
+        this.weatherData = await getWeatherData();
+        console.log(this.weatherData);
+    },
+    components: { CityViewSkeleton }
 })
 </script>
 
