@@ -1,7 +1,7 @@
 <template>
     <div class="nav-group">
         <div class="logo">
-          <img src="../assets/images/cloudy.gif" alt="logo">
+          <img src="../assets/images/partly-cloudy.png" alt="logo">
           <h2>webbot</h2>
         </div>
         <div class="time">
@@ -40,7 +40,7 @@ export default defineComponent({
     text-transform: capitalize;
   }
   img {
-    width: 3.5em;
+    width: 4em;
   }
   .time {
     font-family: 'Rampart One', cursive;
@@ -56,12 +56,12 @@ export default defineComponent({
       text-transform: capitalize;
     }
     img {
-      width: 3.5em;
+      width: 5em;
     }
     .time {
       font-family: 'Rampart One', cursive;
       font-size: 1.1rem;
-      color: #ccc;
+      color: #fff;
     }
   }
 </style>

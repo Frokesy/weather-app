@@ -1,3 +1,4 @@
+
 <template>
     <div class="animate-pulse bg-gradient-to-r from-gray-100 animate">
       &nbsp;
@@ -19,3 +20,10 @@
         }
     }
 </style>
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+ export default defineComponent({
+    name: "AnimatedPlaceHolder",
+});
+</script>
