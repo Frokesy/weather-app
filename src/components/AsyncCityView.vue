@@ -222,7 +222,85 @@ export default defineComponent({
         margin: 0 auto;
         text-align: center;
         margin-bottom: 5px;
+        font-size: 11px;
         width: 100%;
       }
+      .weekly {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        max-width: screen;
+        width: 100%;
+      }
+      .min-max {
+        font-family: 'Rampart One', cursive;
+      }
+      .weekly img {
+        width: 60px;
+        height: 60px;
+      }
+      .weekday {
+        font-size: 1.2rem;
+        font-weight: bold;
+        }
+      .preview {
+        background: #222222;
+        color: #BAC3B8;
+        width: 100%;
+        font-size: 10px;
+        padding: 10px;
+        text-align: center;
+        margin-top: 15px;
+      } 
+      .city-view {
+        align-items: center;
+        text-align: center;
+      }
+      .city-view h1 {
+        font-size: 2.8rem;
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-family: 'Rampart One', cursive;
+        color: #ccc
+      }
+      .city-view img {
+        width: 10em;
+      }
+      .city-view .weather-description {
+        font-size: 1.2rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #ccc
+      }
+      .temp {
+        font-size: 2.8rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: 'Rampart One', cursive;
+        color: #ccc
+      }
+      .rest {
+        font-size: 1rem;
+        color: #ccc
+      }
+      h2 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+        font-family: 'Rampart One', cursive;
+        color: #ccc
+      }
+      .hourly {
+        display: flex;
+        width: 100%;
+        overflow-x: scroll;
+        margin: 30px auto;
+        gap: 3rem;
+        font-size: 11px;
+        text-align:center;
+      } 
+      .hourly p {
+        margin-bottom: 40px;
+        font-family: 'Rampart One', cursive;
+      } 
       }
 </style>

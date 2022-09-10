@@ -40,7 +40,7 @@ export default defineComponent({
     text-transform: capitalize;
   }
   img {
-    width: 4em;
+    width: 4rem;
   }
   .time {
     font-family: 'Rampart One', cursive;
@@ -50,18 +50,20 @@ export default defineComponent({
   @media screen and (max-width: 768px) {
     .logo {
       display: flex;
-      gap: 0.5rem;
-      font-family: 'Rampart One', cursive;
-      font-size: 1rem;
+      justify-content: space-between;
+      gap: 0.2rem;
+      font-size: 0.5rem;
       text-transform: capitalize;
     }
-    img {
-      width: 5em;
+    .logo h2 {
+      font-size: 20px;
+    }
+    .logo img {
+      width: 3rem;
+      height: 5rem;
     }
     .time {
       font-family: 'Rampart One', cursive;
-      font-size: 1.1rem;
-      color: #fff;
-    }
+      font-size: 12px;    }
   }
 </style>
