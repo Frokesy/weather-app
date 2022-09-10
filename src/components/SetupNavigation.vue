@@ -50,17 +50,21 @@ export default defineComponent({
   @media screen and (max-width: 768px) {
     .logo {
       display: flex;
-      justify-content: space-between;
       gap: 0.2rem;
       font-size: 0.5rem;
       text-transform: capitalize;
+    }
+    .nav-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .logo h2 {
       font-size: 20px;
     }
     .logo img {
       width: 3rem;
-      height: 5rem;
+      height: 4rem;
     }
     .time {
       font-family: 'Rampart One', cursive;
