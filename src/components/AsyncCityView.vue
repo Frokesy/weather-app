@@ -99,7 +99,6 @@ export default defineComponent({
             }
         };
         this.weatherData = await getWeatherData();
-        console.log(this.weatherData);
     },
     components: { CityViewSkeleton }
 })

@@ -15,9 +15,7 @@ export default defineComponent({
   },
   methods: {
      previewCity (searchResult: any) {
-      console.log(searchResult)
        const [city, state] = searchResult.place_name.split(', ');
-       console.log(city, state)
        this.router.push({
         name: 'CityView',
         params: {
