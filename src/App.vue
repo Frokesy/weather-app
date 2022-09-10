@@ -38,7 +38,6 @@ export default defineComponent({
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: translateX(30px);
 }
 
 @media screen and (max-width: 768px) {
