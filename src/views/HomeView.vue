@@ -114,10 +114,11 @@ export default defineComponent({
       background: transparent;
       border-bottom: 1px solid #ccc;
       color: #ccc;
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     ::placeholder {
       color: #ccc;
+      font-size: 0.9rem;
     }
     .search input:hover {
       border: none;
