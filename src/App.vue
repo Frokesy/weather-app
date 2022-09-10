@@ -13,7 +13,11 @@ export default defineComponent({
 <template>
     <div class="body">
       <SetupNavigation />
-      <RouterView />
+      <RouterView v-slot="{Component}">
+        <Transition name="page" mode="out-in">
+          <component :is="Component" />
+        </Transition>
+      </RouterView>
     </div>
 </template>
 
@@ -24,6 +28,17 @@ export default defineComponent({
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: 600ms ease all;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
 
 @media screen and (max-width: 768px) {
