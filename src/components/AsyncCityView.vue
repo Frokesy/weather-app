@@ -92,7 +92,7 @@ export default defineComponent({
                     hour.currentTime = utc + 1000 * weatherData.data.timezone_offset;
                 });
                 //flicker delay
-                await new Promise((resolve) => setTimeout(resolve, 1000));
+                await new Promise((resolve) => setTimeout(resolve, 500));
                 return weatherData.data;
             }
             catch (error) {
