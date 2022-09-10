@@ -68,6 +68,6 @@ export default defineComponent({
     }
     .time {
       font-family: 'Rampart One', cursive;
-      font-size: 12px;    }
+      font-size: 13px;    }
   }
 </style>
